@@ -1,0 +1,14 @@
+
+    <h1 Text-align="center">Reservations</h1>  
+    <form>  
+        <div class="container">   
+            <label>Username : </label>   
+            <input type="text" placeholder="Enter Username" name="username"[(ngModel)]="username">  
+            <label>Password : </label>   
+            <input type="password" placeholder="Enter Password" name="password" [(ngModel)]="password">  
+            <button type="submit" (click)="onclick()" >Login</button> 
+            <input placeholder="checkbox" type="checkbox" checked="checked">Remember me           
+            <button type="button" class="cancelbtn"> Cancel</button>   
+            Forgot <a href="#"> password? </a>   
+        </div>   
+    </form>     

@@ -1,0 +1,82 @@
+<button class="btn btn-success my-5" (click)="opendialog()" >Add</button>
+<!-- <table class="table" border="1">
+    <thead>
+        <tr>
+            <th >Reservation_ID</th>&nbsp;
+            <th >Hotel</th>&nbsp;
+            <th >Arrival</th>&nbsp;
+            <th >Depature</th>&nbsp;
+            <th >Type</th>&nbsp;
+            <th >Guests</th>&nbsp;
+            <th >Price</th>&nbsp;
+            <th >Manage</th>
+        </tr>
+    </thead>
+        <tbody>
+            <tr *ngFor="let item of user">
+                <td>{{item.Reservation_ID}}</td>&nbsp;
+                <td>{{item.Hotel}}</td>&nbsp;
+                <td>{{item.Arrival}}</td>&nbsp;
+                <td>{{item.Depature}}</td>&nbsp;
+                <td>{{item.Type}}</td>&nbsp;
+                <td>{{item.Guests}}</td>&nbsp;
+                <td>{{item.Price}}</td>&nbsp;
+                <td><button class="btn btn-success mx-1"(click)="Edit(item)">Edit</button>
+                <button class="btn btn-success mx-2"(click)="Delete(item.Reservation_ID)">Delete</button></td>&nbsp;
+            </tr>
+        </tbody>
+</table> -->
+
+<div class="san">
+    <table mat-table [dataSource]="this.matData" class="full-width-table" matSort> 
+        <ng-container matColumnDef="Reservation_ID">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Reservation_ID </th>
+            <td mat-cell *matCellDef="let element"> {{element.Reservation_ID}} </td>
+          </ng-container>
+       
+    
+        <ng-container matColumnDef="Hotel">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Hotel </th>
+          <td mat-cell *matCellDef="let element"> {{element.Hotel}} </td>
+        </ng-container>
+      
+        <!-- Weight Column -->
+        <ng-container matColumnDef="Arrival">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Arrival </th>
+          <td mat-cell *matCellDef="let element"> {{element.Arrival}} </td>
+        </ng-container>
+      
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="Depature">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Depature </th>
+          <td mat-cell *matCellDef="let element"> {{element.Depature}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="Type">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Type </th>
+            <td mat-cell *matCellDef="let element"> {{element.Type}} </td>
+          </ng-container>
+    
+          <ng-container matColumnDef="Guests">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Guests </th>
+            <td mat-cell *matCellDef="let element"> {{element.Guests}} </td>
+          </ng-container>
+    
+          <ng-container matColumnDef="Price">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Price </th>
+            <td mat-cell *matCellDef="let element"> {{element.Price}} </td>
+          </ng-container>
+      
+          <ng-container matColumnDef="Manage">
+            <th mat-header-cell *matHeaderCellDef> Manage </th>
+            <td mat-cell *matCellDef="let element"> <button class="btn btn-success mx-1"(click)="Edit(element)">Edit</button>   |
+                <button class="btn btn-success mx-2" (click)="Delete(element.Registration_ID)">Delete</button> </td>
+          </ng-container>
+          
+        
+        <tr mat-header-row *matHeaderRowDef="boo"></tr>
+        <tr mat-row *matRowDef="let row; columns: boo;"></tr>
+      </table>
+      
+     <mat-paginator [pageSizeOptions]="[3,10]"></mat-paginator> 
+    </div>

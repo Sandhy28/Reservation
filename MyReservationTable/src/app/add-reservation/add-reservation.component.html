@@ -1,0 +1,26 @@
+<p>Fill the below form</p>
+<div class="overlays" *ngIf="show">
+<div class="content">
+   <div class="close">
+      <button (click)="Reset()">&times;</button>
+ </div>
+ <form [formGroup]="registerform"  >
+    <label for="Reservation_ID">Reservation_ID</label><br>
+    <input placeholder="Reservation_ID" type="number" formControlName="Reservation_ID" required><br><br>
+    <label for="Hotel">Hotel</label><br>
+    <input placeholder="Hotel" type="text" formControlName="Hotel"><br><br>
+    <label for="Arrival">Arrival</label><br>
+    <input placeholder="Arrival"type="date" formControlName="Arrival"><br><br>
+    <label for="Depature">Depature</label><br>
+    <input placeholder="Depature"type="date" formControlName="Depature"><br><br>
+    <label for="Type">Type</label><br>
+    <input placeholder="Type" type="text" formControlName="Type"><br><br>
+    <label for="Guests">Guests</label><br>
+    <input placeholder="Guests" type="number" formControlName="Guests"><br><br>
+    <label for="Price">Price</label><br>
+    <input placeholder="Price" type="number" formControlName="Price"><br><br>
+    <button class="btn btn-primary" (click)="Save()" >Save</button>
+    <button class="btn btn-danger" (click)="Reset()">Reset</button>
+ </form>
+</div>
+</div>
